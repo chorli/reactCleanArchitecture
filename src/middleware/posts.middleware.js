@@ -1,7 +1,7 @@
 import { loadPostsFailure, loadPostsSuccess, LOAD_POSTS } from "../actions/posts.actions";
 import * as uiActions from '../actions/ui.actions';
 
-const loadPostsMiddleware = ( service) => ({ dispatch }) => next => async (action) => {
+const loadPostsMiddleware = ( { service }) => ({ dispatch }) => next => async (action) => {
     if (action.type === LOAD_POSTS) {
         try {
             dispatch(uiActions.setLoading(true));
